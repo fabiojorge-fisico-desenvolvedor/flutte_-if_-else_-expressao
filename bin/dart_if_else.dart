@@ -7,6 +7,8 @@ void main(List<String> arguments) {
   var entradaNota = stdin.readLineSync();
   var nota = double.parse(entradaNota!);
   if (nota < 6) {
-    print('você reprovou');
+    print('você reprovou!');
+    var notaQueFaltou = 6 - nota;
+    print('você reprovou! faltou ${notaQueFaltou}');
   }
 }
