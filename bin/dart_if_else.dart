@@ -8,12 +8,22 @@ void main(List<String> arguments) {
   print('Digite Sua Nota: ');
   var entradaNota = stdin.readLineSync();
   var nota = double.parse(entradaNota!);
-  if (nota <= 5.99) {
-    //experimentando operadores relacionais <, >, =
-    print('você reprovou!');
-    var notaQueFaltou = 6 - nota;
-    print('você reprovou! faltou ${notaQueFaltou}');
+
+  print('informe a nota da recuperação: ');
+  var entradaRecuperacao = stdin.readLineSync();
+  var recuperacao = double.parse(entradaRecuperacao!);
+
+//  utilizando operador lógico para validar resultado
+
+  print('Informe o percentual de sua presença: ');
+  var entradaPresenca = stdin.readLineSync();
+  var presenca = int.parse(entradaPresenca!);
+
+  if ((presenca >= 75) && (nota >= 5.99 || recuperacao >= 5.99)) {
+    //experimentando operadores relacionais <, >, = adicionando agora operadores lógicos no if
+
+    print('PARABÉNS foi aprovado!');
   } else {
-    print('Você foi Aprovado, parabéns!!');
+    print('VOCÊ REPROVOU, ESTUDE MAIS!!');
   }
 }
