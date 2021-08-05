@@ -10,5 +10,7 @@ void main(List<String> arguments) {
     print('você reprovou!');
     var notaQueFaltou = 6 - nota;
     print('você reprovou! faltou ${notaQueFaltou}');
+  } else {
+    print('Você foi Aprovado, parabéns!!');
   }
 }
