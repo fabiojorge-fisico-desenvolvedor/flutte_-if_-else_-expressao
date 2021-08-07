@@ -9,27 +9,27 @@ void main(List<String> arguments) {
   var entradaNota = stdin.readLineSync();
   var nota = double.parse(entradaNota!);
 
-  print('informe a nota da recuperação: ');
-  var entradaRecuperacao = stdin.readLineSync();
-  var recuperacao = double.parse(entradaRecuperacao!);
-
-//  utilizando operador lógico para validar resultado
-
   print('Informe o percentual de sua presença: ');
   var entradaPresenca = stdin.readLineSync();
   var presenca = int.parse(entradaPresenca!);
 
   var notaQueFalta = 6 - nota; // variavel que calcula a nota que falta
-  
-  if ((presenca >= 75) && (nota >= 5.99 || recuperacao >= 5.99)) {
-    //experimentando operadores relacionais <, >, = adicionando agora operadores lógicos no if
 
-    print('PARABÉNS foi aprovado!');
+  if (presenca >= 75) {
+    if (nota >= 6) {
+      print('Aprovado, parabéns sua nota foi: $nota');
+    } else {
+      print('Informe a nota da Recuperação');
+      var entradaRecuperacao =
+          stdin.readLineSync(); // entrada de dados recuperação 
+      var recuperacao = double.parse(entradaRecuperacao!);
+      if (recuperacao >= 6) {
+        print('Aprovado e sua nota de recuperação foi $recuperacao');
+      } else {
+        print('reprovado, sua nota de recuperacao foi $recuperacao ');
+      }
+    }
   } else {
-    print(
-        'VOCÊ REPROVOU, ESTUDE MAIS!!'); // tudo ok com o codigo teste de alteração
-    if (nota < 5.99) print('a nota que faltou na prova foi ${notaQueFalta}');
-    if (recuperacao < 6) notaQueFalta = 6 - recuperacao;
-    print('A nota que faltou na recuperacao foi ${notaQueFalta}');
+    print('reprovado por falta');
   }
 }
