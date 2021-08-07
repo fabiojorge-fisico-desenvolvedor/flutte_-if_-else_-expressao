@@ -20,9 +20,7 @@ void main(List<String> arguments) {
   var presenca = int.parse(entradaPresenca!);
 
   var notaQueFalta = 6 - nota; // variavel que calcula a nota que falta
-  var notaQueFaltaRecup =
-      6 - recuperacao; // variável que calcula a nota falta na recuperação
-
+  
   if ((presenca >= 75) && (nota >= 5.99 || recuperacao >= 5.99)) {
     //experimentando operadores relacionais <, >, = adicionando agora operadores lógicos no if
 
@@ -31,7 +29,7 @@ void main(List<String> arguments) {
     print(
         'VOCÊ REPROVOU, ESTUDE MAIS!!'); // tudo ok com o codigo teste de alteração
     if (nota < 5.99) print('a nota que faltou na prova foi ${notaQueFalta}');
-    if (recuperacao < 6)
-      print('A nota que faltou na recuperacao foi ${notaQueFaltaRecup}');
+    if (recuperacao < 6) notaQueFalta = 6 - recuperacao;
+    print('A nota que faltou na recuperacao foi ${notaQueFalta}');
   }
 }
